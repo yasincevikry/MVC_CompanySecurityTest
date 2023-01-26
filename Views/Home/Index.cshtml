@@ -1,0 +1,531 @@
+﻿@{@model MVC_CompanySecurityTest.Models.Information
+
+Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <title>Company Security Test</title>
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+
+    <!-- Favicons -->
+    <link href="~/Gp/assets/img/favicon.png" rel="icon">
+    <link href="~/Gp/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+    <!-- Vendor CSS Files -->
+    <link href="~/Gp/assets/vendor/aos/aos.css" rel="stylesheet">
+    <link href="~/Gp/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="~/Gp/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="~/Gp/assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <link href="~/Gp/assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="~/Gp/assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+    <link href="~/Gp/assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+    <!-- Template Main CSS File -->
+    <link href="~/Gp/assets/css/style.css" rel="stylesheet">
+
+
+</head>
+
+<body>
+
+    <!-- ======= Header ======= -->
+    <header id="header" class="fixed-top ">
+        <div class="container d-flex align-items-center justify-content-lg-between">
+
+            <h1 class="logo me-auto me-lg-0"><a href="index.html">Company Security Test<span>.</span></a></h1>
+
+            <nav id="navbar" class="navbar order-last order-lg-0">
+                <ul>
+                    <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
+                    <li><a class="nav-link scrollto" href="#about">About</a></li>
+                    <li><a class="nav-link scrollto" href="#MAInfo">Mitre Attack Info</a></li>
+                    <li><a class="nav-link scrollto" href="#team">2 Man Squad</a></li>
+                    <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
+
+                    <li>
+                        @if (Session["email"] != null)
+                        {
+
+                        <li>@Html.ActionLink("Profile", "Index", "Profile")</li>
+                        <li>@Html.ActionLink("ATT&CK Test", "Index", "MitreAttackTest")</li>
+                        <li>@Html.ActionLink("Results", "TestResults", "TestResult")</li>
+                        <li>@Html.ActionLink("Logout", "Logout", "Home")</li>
+
+                    }
+                    else
+                    {
+                        <li>@Html.ActionLink("Login", "Login", "Home")</li>
+                        <li>@Html.ActionLink("Signup", "Signup", "Home")</li>
+                    }
+
+                        </li>
+                    </ul>
+                    <i class="bi bi-list mobile-nav-toggle"></i>
+                </nav><!-- .navbar -->
+
+            </div>
+        </header><!-- End Header -->
+        <!-- ======= Hero Section ======= -->
+        <section id="hero" class="d-flex align-items-center justify-content-center">
+            <div class="container" data-aos="fade-up">
+
+                <div class="row justify-content-center" data-aos="fade-up" data-aos-delay="150">
+                    <div class="col-xl-6 col-lg-8">
+                        <h1>Find the Mitre Attack in Your Dreams!<span>.</span></h1>
+                        <h2>
+                            Do you want to test your company website? You are in the right place! With "Company Security
+                            Test", you can test your company website in seconds with MITRE Attacks!"
+                        </h2>
+                    </div>
+                </div>
+
+                <div class="row gy-4 mt-5 justify-content-center" data-aos="zoom-in" data-aos-delay="250">
+                    <div class="col-xl-2 col-md-4">
+                        <div class="icon-box">
+                            <i class="ri-store-line"></i>
+                            <h3><a href="https://attack.mitre.org/">Mitre Attack</a></h3>
+                        </div>
+                    </div>
+                    <div class="col-xl-2 col-md-4">
+                        <div class="icon-box">
+                            <i class="ri-bar-chart-box-line"></i>
+                            <h3><a href="https://www.maltepe.edu.tr/">Maltepe University</a></h3>
+                        </div>
+                    </div>
+                    <div class="col-xl-2 col-md-4">
+                        <div class="icon-box">
+                            <i class="ri-calendar-todo-line"></i>
+                            <h3><a href="https://github.com/">GitHub</a></h3>
+                        </div>
+                    </div>
+                    <div class="col-xl-2 col-md-4">
+                        <div class="icon-box">
+                            <i class="ri-paint-brush-line"></i>
+                            <h3><a href="https://www.linkedin.com">LinkedIn</a></h3>
+                        </div>
+                    </div>
+                    <div class="col-xl-2 col-md-4">
+                        <div class="icon-box">
+                            <i class="ri-database-2-line"></i>
+                            <h3><a href="https://www.youtube.com/channel/UCIL38g9LedlSsMWmFDN3Mxw">SkinnyDev Youtube</a></h3>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section><!-- End Hero -->
+
+        <main id="main">
+
+            <!-- ======= About Section ======= -->
+            <section id="about" class="about">
+                <div class="container" data-aos="fade-up">
+                    <div class="section-title">
+                        <h2>About Us</h2>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-6 order-1 order-lg-2" data-aos="fade-left" data-aos-delay="100">
+                            <img src="~/Gp/assets/img/Hacker.jpg" class="img-fluid" alt="">
+                        </div>
+                        <div class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1 content" data-aos="fade-right" data-aos-delay="100">
+                            <h3>Some of the things you can do with the help of Company Security Test;</h3>
+                            <p class="fst-italic">
+                                You can get tons of information about Mitre Attacks and start your journey of Cyber Security!
+                            </p>
+                            <ul>
+                                <li><i class="ri-check-double-line"></i> Tons of information about Mitre Attacks.</li>
+                                <li><i class="ri-check-double-line"></i> How to defend your company from malicious hackers.</li>
+                                <li><i class="ri-check-double-line"></i> Learn how hackers are working and how they are preparing to attack your company.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+            </section><!-- End About Section -->
+            <!-- ======= Clients Section ======= -->
+            <section id="clients" class="clients">
+                <div class="container" data-aos="zoom-in">
+
+                    <div class="clients-slider swiper">
+                        <div class="swiper-wrapper align-items-center">
+                            <div class="swiper-slide"><img src="~/Gp/assets/img/clients/MitreAttack.jpg" class="img-fluid" alt=""></div>
+                            <div class="swiper-slide"><img src="~/Gp/assets/img/clients/SkinnyDev.jpg" class="img-fluid" alt=""></div>
+                            <div class="swiper-slide"><img src="~/Gp/assets/img/clients/GDSC.png" class="img-fluid" alt=""></div>
+                            <div class="swiper-slide"><img src="~/Gp/assets/img/clients/uysal.png" class="img-fluid" alt=""></div>
+                            <div class="swiper-slide"><img src="~/Gp/assets/img/clients/maltepe.png" class="img-fluid" alt=""></div>
+                            <div class="swiper-slide"><img src="~/Gp/assets/img/clients/linkedin.png" class="img-fluid" alt=""></div>
+                            <div class="swiper-slide"><img src="~/Gp/assets/img/clients/gitHub.png" class="img-fluid" alt=""></div>
+                            <div class="swiper-slide"><img src="~/Gp/assets/img/clients/maudance.png" class="img-fluid" alt=""></div>
+                        </div>
+                        <div class="swiper-pagination"></div>
+                    </div>
+
+                </div>
+            </section><!-- End Clients Section -->
+            <!-- ======= Mitre Attack Info Section ======= -->
+            <section id="MAInfo" class="MAInfo">
+
+                <div class="container" data-aos="fade-up">
+
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-md-12 mx-auto">
+                                <div class="section-title">
+                                    <h2>Mitre Attack Info</h2>
+                                </div>
+                                <div class="card">
+                                    <div class="card-body">
+
+                                        <center>
+                                            <h2>General MITRE Attack Information</h2>
+                                            <img src="~/Gp/assets/img/MitreAttackInfo/ATT&CK_red.png" width="120px" height="120px" />
+                                            <p>
+                                                Cyber security is the practice of protecting computers, servers, mobile devices,
+                                                electronic systems, networks and data from malicious attacks. In the current century, as a result
+                                                of the development of software and its use almost everywhere, cyber security has become very
+                                                important element for ensuring security. MITRE Attack is a cyber security method created to
+                                                document malicious user behaviours that want to harm the network and the system. MITRE
+                                                Attack is a knowledge base of techniques, tactics, and procedures that describe actions taken by
+                                                an attacker while operating within a corporate network. In this preparation, how the cyber
+                                                security of websites and pages in ensured with MITRE Attack will be examined
+                                            </p>
+                                        </center>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="col-md-6">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <center>
+                                            <h4>Network Service Discovery</h4>
+                                            <img src="~/Gp/assets/img/MitreAttackInfo/NetworkServiceDiscovery.png" width="120px" height="120px" />
+                                            <p>
+                                                Attackers are remote, vulnerable, and vulnerable to software exploitation.
+                                                remote hosts and local network infrastructure, along with internal computers that may be
+                                                malicious intent to obtain a list of services running on their device
+                                                may try to use it. Familiar methods of obtaining the information in these lists
+                                                port or vulnerability using tools brought into a system
+                                                scans are included.
+                                            </p>
+                                        </center>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <center>
+                                            <h4>Create Account – Local Account</h4>
+                                            <img src="~/Gp/assets/img/MitreAttackInfo/CreateAccountLocalAccount.png" width="120px" height="120px" />
+                                            <p>
+                                                Attackers can create a local account to maintain access to victim systems.
+                                                Local accounts for use by an organization, providing remote support, and administration in the service
+                                                are configured to be used on their behalf. A local account with sufficient access
+                                                "net user / add" command can be used to create (local account on macOS systems
+                                                The command “dscl -create” can be used to create it.)
+                                            </p>
+                                        </center>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+            </section><!-- End Mitre Attack Info Section -->
+            <!-- ======= Cta Section ======= -->
+            <section id="cta" class="cta">
+                <div class="container" data-aos="zoom-in">
+
+                    <div class="text-center">
+                        <h3>Haven't you Signed Up Yet?!</h3>
+                        <p>Click the button and join the Cyber Security World by learning Mitre Attacks.</p>
+                        <a class="cta-btn" @Html.ActionLink("Sign me up!", "Signup", "Home")></a>
+                    </div>
+
+                </div>
+            </section><!-- End Cta Section -->
+            <!-- ======= Counts Section ======= -->
+            <section id="counts" class="counts">
+                <div class="container" data-aos="fade-up">
+
+                    <div class="row no-gutters">
+                        <div class="image col-xl-5 d-flex align-items-stretch justify-content-center justify-content-lg-start" data-aos="fade-right" data-aos-delay="100"></div>
+
+                        <div class="col-xl-7 ps-0 ps-lg-5 pe-lg-1 d-flex align-items-stretch" data-aos="fade-left" data-aos-delay="100">
+                            <div class="content d-flex flex-column justify-content-center">
+                                <h3>Wanna see the statistical results?</h3>
+                                <p>
+                                    Companies that use COMPANY SECURITY TEST are 95% safer than those who do not!
+                                </p>
+                                <div class="row">
+                                    <div class="col-md-6 d-md-flex align-items-md-stretch">
+                                        <div class="count-box">
+                                            <i class="bi bi-emoji-smile"></i>
+                                            <span data-purecounter-start="0" data-purecounter-end="65" data-purecounter-duration="2" class="purecounter"></span>
+                                            <p><strong>Happy Clients</strong> Company Security Test users are %65 Happier!</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-6 d-md-flex align-items-md-stretch">
+                                        <div class="count-box">
+                                            <i class="bi bi-journal-richtext"></i>
+                                            <span data-purecounter-start="0" data-purecounter-end="85" data-purecounter-duration="2" class="purecounter"></span>
+                                            <p><strong>Projects</strong> Companies who use Company Security Test can protect their projects a lot safely.</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-6 d-md-flex align-items-md-stretch">
+                                        <div class="count-box">
+                                            <i class="bi bi-clock"></i>
+                                            <span data-purecounter-start="0" data-purecounter-end="35" data-purecounter-duration="4" class="purecounter"></span>
+                                            <p><strong>Years of experience</strong> With our experience, no one can mess with you :)</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-6 d-md-flex align-items-md-stretch">
+                                        <div class="count-box">
+                                            <i class="bi bi-award"></i>
+                                            <span data-purecounter-start="0" data-purecounter-end="20" data-purecounter-duration="4" class="purecounter"></span>
+                                            <p><strong>Awards</strong> We are proud to be selected as the most reliable site in the world 4 times.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div><!-- End .content-->
+                        </div>
+                    </div>
+                </div>
+            </section><!-- End Counts Section -->
+            <!-- ======= Testimonials Section ======= -->
+            <section id="testimonials" class="testimonials">
+                <div class="container" data-aos="zoom-in">
+
+                    <div class="testimonials-slider swiper" data-aos="fade-up" data-aos-delay="100">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <div class="testimonial-item">
+                                    <img src="~/Gp/assets/img/team/Yasin.png" class="testimonial-img" alt="">
+                                    <h3>Yasin Çevik</h3>
+                                    <h4>Jr. Backend Developer</h4>
+                                    <p>
+                                        <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                                        My dreams are bigger than the whole world. People cannot live without dreaming.
+                                        <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                                    </p>
+                                </div>
+                            </div><!-- End testimonial item -->
+
+                            <div class="swiper-slide">
+                                <div class="testimonial-item">
+                                    <img src="~/Gp/assets/img/team/Tayfun.png" class="testimonial-img" alt="">
+                                    <h3>Tevfik Tayfun Yılmaz</h3>
+                                    <h4>Jr. Game Developer</h4>
+                                    <p>
+                                        <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                                        It is necessary to know something of everything and everything of something.
+                                        <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                                    </p>
+                                </div>
+                            </div><!-- End testimonial item -->
+
+                            <div class="swiper-slide">
+                                <div class="testimonial-item">
+                                    <img src="~/Gp/assets/img/team/EmreOlca.jpg" class="testimonial-img" alt="">
+                                    <h3>Emre Atlıer Olca</h3>
+                                    <h4>Academician</h4>
+                                    <p>
+                                        <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                                        Convert this project to mvc project!
+                                        <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                                    </p>
+                                </div>
+                            </div><!-- End testimonial item -->
+                        </div>
+                        <div class="swiper-pagination"></div>
+                    </div>
+
+                </div>
+            </section><!-- End Testimonials Section -->
+            <!-- ======= Team Section ======= -->
+            <section id="team" class="team">
+                <div class="container" data-aos="fade-up">
+
+                    <div class="section-title">
+                        <h2>2 Man Squad</h2>
+                        <p>Check our 2 Man Squad</p>
+                    </div>
+
+                    <div class="row">
+
+                        <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+                            <div class="member" data-aos="fade-up" data-aos-delay="100">
+                                <div class="member-img">
+                                    <img src="~/Gp/assets/img/team/Yasin.png" class="img-fluid" alt="">
+                                    <div class="social">
+                                        <a href="https://twitter.com/yasincevikry"><i class="bi bi-twitter"></i></a>
+                                        <a href="https://github.com/yasincevikry"><i class="bi bi-github"></i></a>
+                                        <a href="https://www.instagram.com/yasincevikry/"><i class="bi bi-instagram"></i></a>
+                                        <a href="https://www.linkedin.com/in/yasincevikry/"><i class="bi bi-linkedin"></i></a>
+                                    </div>
+                                </div>
+                                <div class="member-info">
+                                    <h4>Yasin Çevik</h4>
+                                    <span>Jr. Backend Developer</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+                            <div class="member" data-aos="fade-up" data-aos-delay="200">
+                                <div class="member-img">
+                                    <img src="~/Gp/assets/img/team/Tayfun.png" class="img-fluid" alt="">
+                                    <div class="social">
+                                        <a href="https://www.youtube.com/channel/UCIL38g9LedlSsMWmFDN3Mxw"><i class="bi bi-youtube"></i></a>
+                                        <a href="https://github.com/ttayfunylmz"><i class="bi bi-github"></i></a>
+                                        <a href="https://www.instagram.com/ttayfunylmz/"><i class="bi bi-instagram"></i></a>
+                                        <a href="https://www.linkedin.com/in/ttayfunylmz/"><i class="bi bi-linkedin"></i></a>
+                                    </div>
+                                </div>
+                                <div class="member-info">
+                                    <h4>Tevfik Tayfun Yılmaz</h4>
+                                    <span>Jr. Game Developer</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </section><!-- End Team Section -->
+            <!-- ======= Contact Section ======= -->
+            <section id="contact" class="contact">
+                <div class="container" data-aos="fade-up">
+
+                    <div class="section-title">
+                        <h2>Contact</h2>
+                        <p>Contact Us</p>
+                    </div>
+
+                    <div>
+                        <iframe style="border:0; width: 100%; height: 270px;" src="https://maps.google.com/maps?f=d&source=s_d&saddr=40.959451,29.188271&daddr=&hl=tr&geocode=&mra=dme&mrsp=0&sz=15&dirflg=w&sll=40.957507,29.189773&sspn=0.025344,0.055747&ie=UTF8&t=h&ll=40.957539,29.189816&spn=0.019446,0.051413&z=14&output=embed" frameborder="0" allowfullscreen></iframe>
+                    </div>
+
+                    <div class="row mt-5">
+
+                        <div class="col-lg-4">
+                            <div class="info">
+                                <div class="address">
+                                    <i class="bi bi-geo-alt"></i>
+                                    <h4>Location:</h4>
+                                    <p>Marmara Eğitim Köyü, Büyükbakkalköy Mah. Büyükbakkalköy Yolu Sk. No:39 34857 Maltepe / İSTANBUL</p>
+                                </div>
+
+                                <div class="email">
+                                    <i class="bi bi-envelope"></i>
+                                    <h4>Email:</h4>
+                                    <p>yasincevik34@hotmail.com.tr</p>
+                                    <p>tyfnylmz201974@gmail.com</p>
+                                </div>
+
+                                <div class="phone">
+                                    <i class="bi bi-phone"></i>
+                                    <h4>Call:</h4>
+                                    <p>+905413320307</p>
+                                    <p>+905512135161</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </section><!-- End Contact Section -->
+
+        </main><!-- End #main -->
+        <!-- ======= Footer ======= -->
+        <footer id="footer">
+            <div class="footer-top">
+                <div class="container">
+                    <div class="row">
+
+                        <div class="col-lg-3 col-md-6">
+                            <div class="footer-info">
+
+                                <p>
+                                    Marmara Eğitim Köyü, Büyükbakkalköy Mah. Büyükbakkalköy Yolu Sk.
+                                    No:39 34857 Maltepe / İSTANBUL
+                                    <br><br>
+
+                                    <strong>Phone:</strong> +9054133203070 , +905512135161<br>
+                                    <strong>Email:</strong> yasincevik34@hotmail.com.tr , tyfnylmz201974@gmail.com<br>
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-2 col-md-6 footer-links">
+                            <h4>Useful Links</h4>
+                            <ul>
+                                <li><i class="bx bx-chevron-right"></i> <a href="#hero">Home</a></li>
+                                <li><i class="bx bx-chevron-right"></i> <a href="#about">About us</a></li>
+                                <li><i class="bx bx-chevron-right"></i> <a href="#MAInfo">Mitre Attack Info</a></li>
+                                <li><i class="bx bx-chevron-right"></i> <a href="#team">Team</a></li>
+                                <li><i class="bx bx-chevron-right"></i> <a href="#contact">Contact</a></li>
+                                <li><i class="bx bx-chevron-right"></i> <a href="#login">Log In</a></li>
+                                <li><i class="bx bx-chevron-right"></i> <a href="#signup">Sign Up</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="col-lg-3 col-md-6 footer-links">
+                            <h4>Our Services</h4>
+                            <ul>
+                                <li><i class="bx bx-chevron-right"></i> <a href="https://attack.mitre.org/">Mitre Attack</a></li>
+                                <li><i class="bx bx-chevron-right"></i> <a href="https://www.youtube.com/channel/UCIL38g9LedlSsMWmFDN3Mxw">SkinnyDev</a></li>
+                                <li><i class="bx bx-chevron-right"></i> <a href="https://github.com/">GitHub</a></li>
+                                <li><i class="bx bx-chevron-right"></i> <a href="https://www.linkedin.com/feed/">LinkedIn</a></li>
+                                <li><i class="bx bx-chevron-right"></i> <a href="https://www.maltepe.edu.tr/">Maltepe University</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container">
+                <div class="copyright">
+                    &copy; Copyright <strong><span>CompanySecurityTest</span></strong>. All Rights Reserved
+                </div>
+                <div class="credits">
+                    Designed by Yasin and Tayfun
+                </div>
+            </div>
+        </footer><!-- End Footer -->
+
+
+        <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+        <!-- Vendor JS Files -->
+        <script src="~/Gp/assets/vendor/purecounter/purecounter_vanilla.js"></script>
+        <script src="~/Gp/assets/vendor/aos/aos.js"></script>
+        <script src="~/Gp/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+        <script src="~/Gp/assets/vendor/glightbox/js/glightbox.min.js"></script>
+        <script src="~/Gp/assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+        <script src="~/Gp/assets/vendor/swiper/swiper-bundle.min.js"></script>
+        <script src="~/Gp/assets/vendor/php-email-form/validate.js"></script>
+
+        <!-- Template Main JS File -->
+        <script src="~/Gp/assets/js/main.js"></script>
+
+    </body>
+
+</html>
